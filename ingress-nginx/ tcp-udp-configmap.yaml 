@@ -1,0 +1,32 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: tcp-services-internet
+  namespace: ingress-nginx
+data:
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: udp-services-internet
+  namespace: ingress-nginx
+data:
+
+---     
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: tcp-services-intranet
+  namespace: ingress-nginx
+data:
+
+---
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: udp-services-intranet
+  namespace: ingress-nginx
+data:

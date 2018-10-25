@@ -30,6 +30,10 @@ spec:
         app: node-exporter
       name: node-exporter
     spec:
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+        operator: Exists
       containers:
       - image: prom/node-exporter:latest
         name: node-exporter

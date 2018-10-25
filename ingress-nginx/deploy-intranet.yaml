@@ -29,8 +29,8 @@ spec:
             - /nginx-ingress-controller
             - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
             - --configmap=$(POD_NAMESPACE)/nginx-configuration
-            - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services
-            - --udp-services-configmap=$(POD_NAMESPACE)/udp-services
+            - --tcp-services-configmap=$(POD_NAMESPACE)/tcp-services-intranet
+            - --udp-services-configmap=$(POD_NAMESPACE)/udp-services-intranet
             - --ingress-class=nginx-intranet
             - --publish-service=$(POD_NAMESPACE)/ingress-nginx
             - --annotations-prefix=nginx.ingress.kubernetes.io
