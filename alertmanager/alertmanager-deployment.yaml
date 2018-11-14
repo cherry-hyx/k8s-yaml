@@ -16,7 +16,7 @@ spec:
         app: alertmanager
     spec:
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/misaka/alertmanager
+      - image: cherryhyx/alertmanagers
         name: alertmanager
         args:
         - "--config.file=/etc/alertmanager/config.yml"

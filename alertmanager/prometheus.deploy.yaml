@@ -16,7 +16,7 @@ spec:
         app: prometheus
     spec:
       containers:
-      - image: registry.cn-hangzhou.aliyuncs.com/misaka/prometheus
+      - image: prom/prometheus
         name: prometheus
         command:
         - "/bin/prometheus"
