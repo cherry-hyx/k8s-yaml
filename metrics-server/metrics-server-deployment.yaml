@@ -22,6 +22,12 @@ spec:
       labels:
         k8s-app: metrics-server
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: node3
+      tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/master
+        operator: Exists
       serviceAccountName: metrics-server
       volumes:
       # mount in tmp so we can safely use from-scratch images and/or read-only containers
@@ -31,7 +37,19 @@ spec:
       - name: metrics-server
         image: cherryhyx/metrics-server:v0.3.1
         imagePullPolicy: Always
-        args: ["--kubelet-insecure-tls"]
+        args: ["--secure-port=9443"]
+        ports:
+        - containerPort: 9443
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 0.5
+            memory: 256Mi
+          limits:
+            cpu: 1
+            memory: 1024Mi
         volumeMounts:
         - name: tmp-dir
           mountPath: /tmp
+      hostNetwork: true
+      hostPID: true
