@@ -10,15 +10,15 @@ if [ -z "$1" ];then
 fi
 node=$1
 netdev="ens32"
-vip="10.4.33.41"
+vip="1111"
 
 routeNum=55
 
 ###需要写入非本机的MAC地址,即另一个节点的mac,所以使用
-node1_ip="10.4.33.36"
+node1_ip="1111"
 node1_write_mac="00:50:56:93:80:3d"
 
-node2_ip="10.4.33.37"
+node2_ip="1111"
 node2_write_mac="00:50:56:93:49:c9"
 
 
