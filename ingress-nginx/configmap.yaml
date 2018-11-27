@@ -19,6 +19,7 @@ data:
   keep-alive: "75"
   max-worker-connections: "16384"
   proxy-connect-timeout: "30"
+  proxy-buffer-size: "16k"
   proxy-read-timeout: "30"
   proxy-real-ip-cidr: "0.0.0.0/0"
   proxy-send-timeout: "30"
