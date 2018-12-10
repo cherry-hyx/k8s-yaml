@@ -7,4 +7,4 @@ if [ -z "${ENV}" ]
 then
     ENV="dev"
 fi
-java ${JAVA_OPTS} -Denv=$ENV -Dfile.encoding=UTF-8 -jar /app/service-manage.jar
+java ${JAVA_OPTS} -Denv=$ENV -Dfile.encoding=UTF-8 -jar /app.jar

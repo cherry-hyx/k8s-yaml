@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-imageName="reg.aaa.io/nbiot/nbiot-api"
+imageName="reg.aaa.io/api"
 Version=$1
 
 if [ -z "$Version" ] ;then
@@ -35,9 +35,9 @@ function checkDocker {
 
 function build {
   echoPre
-  echo "build nbiot-api"
-  sh ./build.sh || errOut "构建nbiot-api应用程序出错！"
-  echo "build nbiot-api succeed"
+  echo "build ttt-api"
+  sh ./build.sh || errOut "构建ttt-api应用程序出错！"
+  echo "build ttt-api succeed"
   echoPre
 }
 
