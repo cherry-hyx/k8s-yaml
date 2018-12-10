@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-imageName="reg.changhong.io/nbiot/nbiot-api"
+imageName="reg.aaa.io/nbiot/nbiot-api"
 Version=$1
 
 if [ -z "$Version" ] ;then

@@ -1,4 +1,4 @@
-FROM reg.changhong.io/library/openjdk:8-jre-alpine
+FROM reg.ccc.io/library/openjdk:8-jre-alpine
 VOLUME /tmp
 ADD ./target/service-manage.jar /app/service-manage.jar
 ADD start.sh  /app/start.sh
