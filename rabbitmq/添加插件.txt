@@ -1,0 +1,4 @@
+wget https://dl.bintray.com/rabbitmq/community-plugins/3.6.x/rabbitmq_delayed_message_exchange/rabbitmq_delayed_message_exchange-20171215-3.6.x.zip
+unzip rabbitmq_delayed_message_exchange-20171215-3.6.x.zip 
+kubectl -n gpaas cp  ./rabbitmq_delayed_message_exchange-20171215-3.6.x.ez rabbitmq-0:/usr/lib/rabbitmq/plugins
+kubectl -n gpaas exec rabbitmq-0 -it -- /bin/sh
