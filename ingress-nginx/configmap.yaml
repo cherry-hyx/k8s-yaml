@@ -20,11 +20,12 @@ data:
   max-worker-connections: "16384"
   proxy-connect-timeout: "30"
   proxy-buffer-size: "16k"
-  proxy-read-timeout: "30"
+  proxy-connect-timeout: "300"
+  proxy-read-timeout: "300"
   proxy-real-ip-cidr: "0.0.0.0/0"
-  proxy-send-timeout: "30"
-  server-names-hash-bucket-size: "128"
-  server-names-hash-max-size: "1024"
+  proxy-send-timeout: "300"
+  server-names-hash-bucket-size: "256"
+  server-names-hash-max-size: "2048"
   ssl-buffer-size: "4k"
   ssl-ciphers: "ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:DHE-DSS-AES128-GCM-SHA256:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-DSS-AES128-SHA256:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:DHE-RSA-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:AES128-SHA256:AES256-SHA256:AES128-SHA:AES256-SHA:AES:CAMELLIA:DES-CBC3-SHA:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!aECDH:!EDH-DSS-DES-CBC3-SHA:!EDH-RSA-DES-CBC3-SHA:!KRB5-DES-CBC3-SHA"
   ssl-protocols: "TLSv1 TLSv1.1 TLSv1.2"
@@ -36,6 +37,16 @@ data:
   use-hts: "true"
   upstream-keepalive-connections: “256”
   client-max-body-size: "2000m"
+  log-format-escape-json: "true"
+  log-format-upstream: '{"proxy_protocol_addr": "$proxy_protocol_addr","remote_addr":
+    "$remote_addr", "proxy_add_x_forwarded_for": "$proxy_add_x_forwarded_for","request_id":
+    "$request_id","remote_user": "$remote_user", "time_local": "$time_local", "request"
+    : "$request", "status": "$status", "vhost": "$host","body_bytes_sent": "$body_bytes_sent","http_referer":  "$http_referer",
+    "http_user_agent": "$http_user_agent", "request_length" : "$request_length", "request_time"
+    : "$request_time","proxy_upstream_name": "$proxy_upstream_name", "upstream_addr":
+    "$upstream_addr",  "upstream_response_length": "$upstream_response_length","upstream_response_time":
+    "$upstream_response_time", "upstream_status": "$upstream_status"}'
+
 
 ---
 
