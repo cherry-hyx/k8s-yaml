@@ -90,7 +90,7 @@ spec:
         volumeMounts:
         - mountPath: /etc/rabbitmq
           name: config-volume
-        - mountPath: /var/lib/rabbitmq
+        - mountPath: /var/lib/rabbitmq/mnesia
           name: data
       dnsPolicy: ClusterFirst
       restartPolicy: Always

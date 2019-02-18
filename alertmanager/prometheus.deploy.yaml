@@ -16,7 +16,7 @@ spec:
         app: prometheus
     spec:
       containers:
-      - image: prom/prometheus
+      - image: prom/prometheus:v2.6.1
         name: prometheus
         command:
         - "/bin/prometheus"
@@ -25,7 +25,7 @@ spec:
         - "--storage.tsdb.path=/prometheus"
         - "--storage.tsdb.retention=3h"
         - "--web.enable-lifecycle"
-        - "--log.level=debug"  
+        - "--log.level=error"  
         ports:
         - containerPort: 9090
           protocol: TCP
